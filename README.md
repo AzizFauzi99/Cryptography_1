@@ -1,2 +1,6 @@
 # Cryptography_1
-There are 4 Algorithms inside the program:
+<b> There are 4 Algorithms inside the program: <b>
+1. Caesar Cipher
+2. Vigenere Cipher
+3. Rail Fence Cipher
+4. Super Encrypt & Decrypt
