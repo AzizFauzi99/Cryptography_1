@@ -19,7 +19,10 @@ string enkripsiCaesar(string text, int key)
     for (int i = 0; i < text.length(); i++) {   
         if(isspace(text[i])){
 			result += " ";
-		}else{
+		}else if(text[i] >= 48 && text[i] <= 57){
+			result += text[i];
+		}
+		else{
 			// Encrypt Uppercase letters
 			if (isupper(text[i])){
 				result += char(int(text[i] + key - 65) % 26 + 65);
@@ -41,8 +44,11 @@ string dekripsiCaesar(string text, int key)
     for (int i = 0; i < text.length(); i++) {
         
         if(isspace(text[i])){
-			result += " ";
-		}else{
+			result += " ";			
+		}else if(text[i] >= 48 && text[i] <= 57){
+			result += text[i];
+		}
+		else{
 			// Encrypt Uppercase letters
 			if (isupper(text[i])){
 				result += char(int(text[i] + key - 65) % 26 + 65);
@@ -87,7 +93,10 @@ string enkripsiVigenere(string str, string key)
     {
 		if(isspace(str[i])){
 			cipher_text.push_back(' ');
-		}else{
+		}else if(str[i] >= 48 && str[i] <= 57){
+			cipher_text.push_back(str[i]);
+		}
+		else{
 			//converting in range 0-25
 			char x = (str[i] + key[i]) % 26;
 	 
@@ -110,7 +119,10 @@ string dekripsiVigenere(string cipher_text, string key)
     {
 		if(isspace(cipher_text[i])){
 			orig_text.push_back(' ');
-		}else{
+		}else if(cipher_text[i] >= 48 && cipher_text[i] <= 57){
+			orig_text.push_back(cipher_text[i]);
+		}
+		else{
 			// converting in range 0-25
 			char x = (cipher_text[i] - key[i] + 26) %26;
 	 
